@@ -63,7 +63,7 @@ public class HeroController {
     public Optional<Hero> getHero(@PathVariable("id") Long id, @RequestParam Boolean isMarriage){
         Optional<Hero> hero1 = heroes.stream().filter(h -> h.getId() == id).findFirst();
         if(hero1.isPresent()){
-            hero1.get().setMarriage(isMarriage);
+            hero1.get().setIsMarriage(isMarriage);
             return hero1;
         } else {
             return null;
